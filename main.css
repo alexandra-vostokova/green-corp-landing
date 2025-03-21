@@ -1,0 +1,81 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #213053;
+  margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+}
+
+.header__logo {
+  height: 30px;
+}
+
+a {
+  text-decoration: none; /* убрать подчеркивание ссылки */
+  color: #213053;
+}
+
+header a {
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 25px;
+}
+
+button {
+  font-family: 'Raleway', sans—serif;
+  font-size: 15px;
+  color: #fff;
+  background-color: #23a030;
+  border: none;
+  border-radius: 15px; /* скругление границ элемента */
+  cursor: pointer; /* изменение курсора при наведении на кнопку */
+  box-shadow: 0 16px 36px rgb(52 213 68 / 22%); /* тень */
+  padding: 15px;
+}
+
+.about__image {
+  width: 500px;
+}
+ 
+.about__sun-image {
+  width: 100px;
+  height: 100px;
+}
+
+.about {
+  display: flex; /* сделать flex-контейнером */
+  justify-content: space-around; /* распределение элементов по горизонтали с промежутками между элементами и от краёв */
+  align-items: center; /* выравнивание элементов по вертикали */
+  padding-top: 115px;
+  padding-bottom: 115px;
+  background: url('img/back.png') no-repeat; /* добавить фоновое изображение без повторений */
+  background-position: center; /* центрирование фонового изображения */
+  background-size: cover; /* чтобы картинка фона растягивалась под размер секции, полностью покрывая ее */
+}
+
+.about h1 {
+  font-size: 70px;
+  line-height: 76px; /* высота строки текста */
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 30px;
+  opacity: 0.8; /* прозрачность текста */
+}
+
+.about button {
+  font-size: 18px;
+  border-radius: 20px;
+  padding: 20px 25px; /* внутренний отступ первое значение - сверху и снизу, второе - слева и справа */
+  margin-top: 20px; /* внешний отступ сверху */
+}
+
+.about__info {
+  max-width: 550px; /* максимальная ширина блока */
+}
