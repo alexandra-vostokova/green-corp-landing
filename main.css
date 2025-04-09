@@ -31,11 +31,12 @@ button {
   font-size: 15px;
   color: #fff;
   background-color: #23a030;
-  border: none;
+  border: none; /* убрать границу вокруг кнопки */
   border-radius: 15px; /* скругление границ элемента */
   cursor: pointer; /* изменение курсора при наведении на кнопку */
   box-shadow: 0 16px 36px rgb(52 213 68 / 22%); /* тень */
   padding: 15px;
+  transition: background-color 0.3s ease-in; /* изменение цвета фона при наведении на кнопку */
 }
 
 .about__image {
@@ -71,11 +72,122 @@ button {
 
 .about button {
   font-size: 18px;
-  border-radius: 20px;
+  border-radius: 20px; /* скругление границ элемента */
   padding: 20px 25px; /* внутренний отступ первое значение - сверху и снизу, второе - слева и справа */
   margin-top: 20px; /* внешний отступ сверху */
 }
 
 .about__info {
   max-width: 550px; /* максимальная ширина блока */
+}
+
+.form__container {
+  width: 550px;
+}
+
+.form {
+  display: flex;
+  justify-content: center; /* выравнивание элементов по горизонтали */
+  align-items: center; /* выравнивание элементов по вертикали */
+  background-color: #1D263A;
+  color: #fff;
+  padding-top: 115px;
+  padding-bottom: 115px;
+  text-align: center; /* выравнивание текста по центру */
+}
+
+.form h1 {
+  font-size: 48px;
+}
+
+.form p {
+  font-size: 18px;
+  opacity: 0.65; /* прозрачность текста */
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* выравнивание текста по левому краю */
+}
+
+.form form {
+  display: grid;
+  grid-gap: 20px; /* расстояние между ячейками сетки */
+  margin-top: 60px; /* внешний отступ сверху */
+}
+
+.form label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px; /* внешний отступ снизу */
+}
+
+.form input {
+  font-size: 18px;
+  color: #213053;
+  height: 30px; /* высота элемента */
+  width: 100%;
+  padding: 0px 0px 20px 20px; /* внутренний отступ сверху и снизу первого значения, внутренний отступ слева и справа второго значения */
+  border-radius: 15px; /* скругление границ элемента */
+  border: none; /* убрать границу вокруг кнопки */
+  outline: none; /* убрать границу у всех полей ввода при вводе текста */
+}
+
+.form select {
+  font-size: 18px;
+  color: #213053;
+  height: 60px; /* высота элемента */
+  width: 103%;
+  padding: 0px 0px 20px 20px; /* внутренний отступ сверху и снизу первого значения, внутренний отступ слева и справа второго значения */
+  border-radius: 15px; /* скругление границ элемента */
+  border: none; /* убрать границу вокруг кнопки */
+  appearance: none; /* убрать стандартный вид выпадающего списка */
+}
+
+.form__submit {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 40px; /* внешний отступ сверху */
+}
+
+button:hover {
+  background-color: #f6980c; /* цвет фона кнопки при наведении на нее мышкой */
+  box-shadow: 0 16px 36px rgba(246 152 12 / 20%); /* тень */
+}
+
+footer {
+  padding: 90px 90px 20px 20px; /* внутренний отступ сверху, снизу, слева и справа */
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: center; /* выравнивание элементов по горизонтали */
+}
+
+.footer__copyright {
+  margin-top: 40px; /* внешний отступ сверху */
+  text-align: center; /* выравнивание текста по центру */
+  opacity: 0.5; /* прозрачность текста */
+}
+
+.footer__group {
+  margin-right: 80px; /* внешний отступ справа */
+}
+
+.footer__group h3 {
+  font-size: 16px;
+  opacity: 0.7; /* прозрачность текста */
+  margin-bottom: 30px; /* внешний отступ снизу */
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__links a {
+  margin-bottom: 15px;
 }
