@@ -9,6 +9,10 @@ header {
     justify-content: space-between; 
     align-items: center;
     padding: 20px;
+    position: sticky; /* прилипание к верху страницы */
+    background: white; /* цвет фона */
+    top: 0; /* отступ сверху страницы */
+    z-index: 1; /* наивысший уровень прилипания к верху страницы */
 }
 
 .header__logo {
@@ -36,16 +40,29 @@ button {
   cursor: pointer; /* изменение курсора при наведении на кнопку */
   box-shadow: 0 16px 36px rgb(52 213 68 / 22%); /* тень */
   padding: 15px;
-  transition: background-color 0.3s ease-in; /* изменение цвета фона при наведении на кнопку */
+
 }
 
 .about__image {
   width: 500px;
 }
- 
+
+/*сценарий анимации*/
+@keyframes rotation {
+  0% {
+      transform: rotate(0);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
 .about__sun-image {
   width: 100px;
   height: 100px;
+  animation: rotation 10s infinite linear; /* имя анимации,  продолжительность анимации, количество повторений анимации - бесконечно, функция перехода анимации - линейная*/
+  position: absolute; /*абсолютное позиционирование */
 }
 
 .about {
@@ -120,14 +137,13 @@ button {
 .form label {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 15px; /* внешний отступ снизу */
+  margin-bottom: 20px; /* внешний отступ снизу */
 }
 
 .form input {
   font-size: 18px;
   color: #213053;
-  height: 30px; /* высота элемента */
-  width: 100%;
+  height: 60px; /* высота элемента */
   padding: 0px 0px 20px 20px; /* внутренний отступ сверху и снизу первого значения, внутренний отступ слева и справа второго значения */
   border-radius: 15px; /* скругление границ элемента */
   border: none; /* убрать границу вокруг кнопки */
@@ -138,11 +154,11 @@ button {
   font-size: 18px;
   color: #213053;
   height: 60px; /* высота элемента */
-  width: 103%;
   padding: 0px 0px 20px 20px; /* внутренний отступ сверху и снизу первого значения, внутренний отступ слева и справа второго значения */
   border-radius: 15px; /* скругление границ элемента */
   border: none; /* убрать границу вокруг кнопки */
   appearance: none; /* убрать стандартный вид выпадающего списка */
+  outline: none; /* убрать границу у всех полей ввода при вводе текста */
 }
 
 .form__submit {
@@ -154,6 +170,7 @@ button {
 button:hover {
   background-color: #f6980c; /* цвет фона кнопки при наведении на нее мышкой */
   box-shadow: 0 16px 36px rgba(246 152 12 / 20%); /* тень */
+  transition: background-color 0.3s ease-in; /* изменение цвета фона при наведении на кнопку */
 }
 
 footer {
@@ -177,7 +194,7 @@ footer {
   margin-right: 80px; /* внешний отступ справа */
 }
 
-.footer__group h3 {
+.footer h3 {
   font-size: 16px;
   opacity: 0.7; /* прозрачность текста */
   margin-bottom: 30px; /* внешний отступ снизу */
@@ -191,3 +208,282 @@ footer {
 .footer__links a {
   margin-bottom: 15px;
 }
+
+.features {
+  background-color: #fff;
+  padding: 115px 60px; /* внутренний отступ сверху и снизу первого значения, внутренний отступ слева и справа второго значения */
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* количество столбцов */
+  grid-gap: 50px; /* расстояние между ячейками сетки (карточками) */
+}
+
+.card {
+  padding: 35px 40px 25px 40px;
+  background: #FFFFFF;
+  border: 1px solid #D9E4E6; /* граница вокруг карточки: толщина, жирность, цвет */
+  border-radius: 5px; /* скругление границ карточки */
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 22px;
+  opacity: 0.8; /* прозрачность текста */
+}
+
+.card__logo {
+  font-weight: 700; /* жирность (толщина) текста */
+  font-size: 32px;
+  background: #eaeff9;
+  border-radius: 50%; /* скругление границы элемента */
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__logo.yellow {
+  color: #ffb406;
+}
+
+.card__logo.red {
+  color: #ad1714;
+}
+
+.card__logo.green {
+  color: #22a030;
+}
+
+.features__border {
+  width: 100%;
+  margin-top: 50px; /* внешний отступ сверху */
+  margin-bottom: 50px; /* внешний отступ снизу */
+  border: 1px solid #E6EAF4; /* граница вокруг карточки: толщина, жирность, цвет */
+}
+
+.features__feedback {
+  display: flex;
+}
+
+.features__feedback-left {
+  margin-right: 10px; /* внешний отступ справа */
+}
+
+.features__feedback-left h2 {
+  font-size: 48px;
+}
+
+.features__feedback-left p {
+  font-size: 18px;
+  line-height: 26px; /*высота строки текста*/
+  opacity: 0.7; /* прозрачность текста */
+}
+
+.features__feedback-right {
+  display: flex;
+  align-items: center; /* выравнивание элементов по центру */
+}
+
+.features__box {
+  padding: 30px 40px 25px 40px; /* внутренний отступ сверху, снизу, слева и справа */
+  color: white;
+  border-radius: 25px; /* скругление границы карточки */
+}
+
+.features__box h3 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 48px;
+}
+
+.features__savings-box {
+  background-color: #dc5e26;
+  box-shadow: 0px 6px 0px rgb(221 95 38 / 20%); /*отступ тени по горизонтали, отступ тени по вертикали, размытие, цвет тени*/
+  margin-right: 30px;
+}
+
+.features__rate-box {
+  background-color: #1D263A;
+  box-shadow: 0px 6px 0px rgb(29 38 58 / 20%); /*отступ тени по горизонтали, отступ тени по вертикали, размытие, цвет тени*/
+}
+
+.stars {
+  color: #ff7039;
+}
+
+.promo {
+  display: flex;
+}
+
+.promo__image {
+  background-image: url('img/promo.jpg'); /* добавить фоновое изображение */
+  background-position: center; /* центрирование фонового изображения */
+  background-size: cover; /* чтобы картинка фона растягивалась под размер секции, полностью покрывая ее */
+  flex-shrink: 0; /* для того, чтобы блок с изображением не уменьшался при сужении экрана */
+  width: 50%; /* ширина блока с изображением */
+}
+
+.promo__right {
+  background-color: #dd5f26;
+  padding: 160px 60px; /* внутренний отступ сверху и снизу первого значения, внутренний отступ слева и справа второго значения */
+}
+
+.promo__text {
+  background-color: white;
+  padding: 30px 40px; /* внутренний отступ сверху и снизу первого значения, внутренний отступ слева и справа второго значения */
+  font-size: 20px;
+  line-height: 26px; /*высота строки текста*/
+  font-weight: 500;
+  border-radius: 25px; /* скругление границы карточки */
+}
+
+.promo__text p::before {
+  content: '';
+  display: inline-block; /* добавление символа, который будет отображаться перед текстом в одной строке */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ec6b29;
+  margin-right: 10px;
+}
+
+.promo__text p {
+  opacity: 0.8;
+}
+
+.promo__text button {
+  background-color: #107b1c;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  box-shadow: 0 16px 36px rgb(16 122 28 / 30%);
+  padding: 15px 30px;
+}
+
+.promo__button-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.promo__text button i {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+
+/* Стили для планшетов*/
+@media (max-width: 1024px) { 
+  .about {
+    padding: 115px 20px;
+}
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .about__image {
+    width: 280px;
+  }
+
+  .about__sun-image {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* Стили для мобильных телефонов */
+@media (max-width: 720px) {
+  header {
+    padding: 10px;
+  }
+
+  .header__logo {
+    height: 20px;
+  }
+
+  header a {
+    margin-right: 10px;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+    padding: 50px 10px;
+  }
+
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .about__image {
+    width: 280px;
+  }
+
+  .about__sun-image {
+    width: 75px;
+    height: 75px;
+  }
+
+  .form {
+    padding: 50px 10px;
+  }
+
+  .form h1 {
+    font-size: 36px;
+  }
+
+  footer {
+    padding: 50px 10px;
+  }
+
+  .footer__container {
+    flex-direction: column;
+  }
+
+  .features {
+    padding: 50px 10px;
+  }
+
+  .cards {
+    grid-template-columns: auto; /* сброс свойства задания колонок в изначальное (друг под другом) */
+  }
+
+  .features__feedback {
+    flex-direction: column; /*изменить направление главной оси flex-контейнера - по вертикали*/
+  }
+
+  .features__feedback-left {
+    margin-right: 0; /* внешний отступ справа */
+  }
+
+  .features__feedback-left h2, .features__box h3 {
+    font-size: 36px;
+  }
+
+  .features__feedback-right {
+    flex-direction: column; /*изменить направление главной оси flex-контейнера - по вертикали*/
+    align-items: initial; /* сброс свойства в исходное значение по умолчанию*/
+  }
+
+  .features__savings-box {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .promo {
+    flex-direction: column-reverse; /* элементы выстраиваются вертикально, но в обратном порядке (снизу вверх)*/
+  }
+
+  .promo__image {
+    height: 500px;
+    width: 100%;
+  }
+
+  .promo__right {
+    padding: 50px 10px;
+  }
+}
+
+
